@@ -1,0 +1,43 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.nav-logo {
+    font-family: 'Mochiy Pop P One';
+}
+
+.nav-logo span {
+    color: orange;
+}
+
+.my-navbar {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0 40px 0 40px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu ul li a {
+    color: rgb(90, 90, 90);
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
+.nav-menu ul li a:hover {
+    color: orange;
+    border-bottom: 1px solid orange;
+}
+
+.nav-menu ul li {
+    margin-right: 3rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}

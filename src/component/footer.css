@@ -1,0 +1,28 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.my-footer {
+    text-align: center;
+    background-color: rgb(44, 44, 44);
+    padding: 20px;
+    color: white;
+}
+
+.footer-logo {
+    font-family: 'Mochiy Pop P One';
+}
+
+.footer-logo span {
+    color: orange;
+}
+
+.footer-icon {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin: 0 10px 0 10px;
+}
+
+.footer-icon:hover {
+    color: orange;
+}
