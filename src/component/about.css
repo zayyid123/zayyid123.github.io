@@ -1,0 +1,32 @@
+.my-about {
+    max-width: 1020px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.my-about h1 {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100px;
+    border-bottom: 2px solid orange;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-img {
+    flex-basis: 1;
+}
+
+.about-img img {
+    width: 200px;
+}
+
+.about-profil {
+    max-width: 500px;
+    flex-basis: 1;
+}

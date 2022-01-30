@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.my-home {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.home_title {
+    font-size: 3rem;
+}
+
+.my-name {
+    font-family: 'Mochiy Pop P One';
+    font-size: 3.2rem;
+}
+
+.my-name span {
+    color: orange;
+}
+
+.home-img img {
+    max-width: 200px;
+}
