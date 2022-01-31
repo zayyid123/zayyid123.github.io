@@ -1,4 +1,5 @@
 .my-about {
+    padding-top: 50px;
     max-width: 1020px;
     margin-right: auto;
     margin-left: auto;
@@ -8,25 +9,36 @@
     margin-right: auto;
     margin-left: auto;
     width: 100px;
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #f78009;
 }
 
 .about-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-
-.about-img {
-    flex-basis: 1;
-}
-
 .about-img img {
-    width: 200px;
+    max-width: 450px;
+    margin: 20px;
 }
 
 .about-profil {
     max-width: 500px;
-    flex-basis: 1;
+}
+
+.about-profil p span {
+    color: #f78009;
+}
+
+@media screen and (max-width: 989px) {
+    .about-container {
+        text-align: center;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .about-img img {
+        width: 100%;
+        }
 }

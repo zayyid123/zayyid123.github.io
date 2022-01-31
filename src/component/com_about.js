@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './about.css';
-import gambar from '../image/my_photo.png';
+import gambar from '../image/photo2.png';
 
 function About() {
     return(
-        <div className='my-about'>
+        <div className='my-about' id='about'>
+            <p></p>
             <h1>About</h1>
 
             <div className='about-container'>
@@ -16,7 +17,7 @@ function About() {
                         I'am Zayyid
                     </h2>
                     <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.
+                    Perkenalkan nama saya <span>Mochamad Muzayyid Al Hakim</span> saya mahasiswa semester 6 di <span>Universitas Negeri Surabaya</span> Jurusan <span>Teknik Informatika</span> Prodi <span>Sistem Informasi</span>, saya adalah orang yang senang dan menggeluti tentang <span>front-end web developer</span> dan pernyataan ini di dukung dengan adanya sertifikasi saya di <span>Dicoding Academy</span> yaitu sertifikasi <span>front-end web developer expert</span>.
                     </p>
                 </div>
             </div>

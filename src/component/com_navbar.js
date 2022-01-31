@@ -19,10 +19,10 @@ class Navbar extends React.Component{
                     <div className='nav-menu' id='nav-menu'>
                         <ul className={this.state.isActive ? 'container-menu' : 'container-menu show'}>
                             <li><a href='#'>Home</a></li>
-                            <li><a href='#'>About</a></li>
-                            <li><a href='#'>Skills</a></li>
-                            <li><a href='#'>Work</a></li>
-                            <li><a href='#'>Contact</a></li>
+                            <li><a href='#about'>About</a></li>
+                            <li><a href='#skills'>Skills</a></li>
+                            <li><a href='#work'>Work</a></li>
+                            <li><a href='#contact'>Contact</a></li>
                         </ul>
                     </div>
     
