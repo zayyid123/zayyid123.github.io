@@ -2,7 +2,7 @@ import './work.css';
 
 function Work() {
     return(
-        <div id='work'>
+        <div className='work' id='work'>
             <h1>Work</h1>
         </div>
     );
