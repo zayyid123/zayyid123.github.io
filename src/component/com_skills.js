@@ -1,8 +1,8 @@
-import './skilss.css';
+import './skills.css';
 
 function Skills() {
     return(
-        <div id='skills'>
+        <div className='skills' id='skills'>
             <h1>Skills</h1>
         </div>
     );
