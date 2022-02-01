@@ -25,12 +25,16 @@
     width: 30%;
     border-radius: 10px;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: rgb(44, 44, 44);
 }
 
 .card img {
     width: 100%;
     border-radius: 10px 10px 0 0;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card:hover {
