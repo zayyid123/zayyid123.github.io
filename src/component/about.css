@@ -21,7 +21,6 @@
 }
 .about-img img {
     max-width: 450px;
-    margin: 20px;
 }
 
 .about-profil {
@@ -40,6 +39,6 @@
     }
 
     .about-img img {
-        width: 100%;
+        width: 90%;
         }
 }
