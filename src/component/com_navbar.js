@@ -18,11 +18,11 @@ class Navbar extends React.Component{
                     </div>
                     <div className='nav-menu' id='nav-menu'>
                         <ul className={this.state.isActive ? 'container-menu' : 'container-menu show'}>
-                            <li><a href='#'>Home</a></li>
-                            <li><a href='#about'>About</a></li>
-                            <li><a href='#skills'>Skills</a></li>
-                            <li><a href='#work'>Work</a></li>
-                            <li><a href='#contact'>Contact</a></li>
+                            <li><a href='#' onClick={ () => this.setState({isActive: !this.state.isActive})}>Home</a></li>
+                            <li><a href='#about' onClick={ () => this.setState({isActive: !this.state.isActive})}>About</a></li>
+                            <li><a href='#skills' onClick={ () => this.setState({isActive: !this.state.isActive})}>Skills</a></li>
+                            <li><a href='#work' onClick={ () => this.setState({isActive: !this.state.isActive})}>Work</a></li>
+                            <li><a href='#contact' onClick={ () => this.setState({isActive: !this.state.isActive})}>Contact</a></li>
                         </ul>
                     </div>
     

@@ -1,6 +1,9 @@
 .skills {
     padding-top: 50px;
     padding-bottom: 50px;
+    max-width: 1020px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .skills h1 {
@@ -20,6 +23,10 @@
 .skills-presentation {
     max-width: 530px;
     margin-bottom: 20px;
+}
+
+.skills-img img {
+    max-width: 430px;
 }
 
 .skill-bars {
