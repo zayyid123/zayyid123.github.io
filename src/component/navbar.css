@@ -55,7 +55,7 @@
 
 .nav-menu .show {
     right: 0;
-    display: inline;
+    display: flex;
 }
 
 @media screen and (max-width: 767px) {
