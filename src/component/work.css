@@ -3,6 +3,7 @@
     max-width: 1020px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 50px;
 }
 
 .work h1 {
@@ -43,6 +44,12 @@
 
 .container {
     padding: 2px 16px;
+}
+
+@media screen and (max-width: 660px) {
+    .card {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 425px) {
