@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './work.css';
 import sme from '../image/work/sme.png';
+import evorty from '../image/work/evorty.png';
 import adzan from '../image/work/adzan.png';
 import ngaji from '../image/work/ngaji.png';
 import bookshelf from '../image/work/bookshelf.png';
@@ -17,6 +18,13 @@ function Work() {
                     <img src={sme}/>
                     <div className ="container">
                         <h4>SME (Share My Event)</h4> 
+                    </div>
+                </a>
+
+                <a href='https://zayyid123.github.io/eventy/' className ="card" terget="_blank">
+                    <img src={evorty}/>
+                    <div className ="container">
+                        <h4>Landing Page</h4> 
                     </div>
                 </a>
 
