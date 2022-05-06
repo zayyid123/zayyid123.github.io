@@ -13,7 +13,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // aos
-AOS.init();
+AOS.init({
+  offset: 200,
+  duration: 600,
+  easing: 'ease',
+  delay: 100,
+});
 
 class App extends React.Component {
   render() {
