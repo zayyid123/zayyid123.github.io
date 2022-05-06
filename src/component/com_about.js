@@ -4,7 +4,7 @@ import gambar from '../image/photo2.png';
 
 function About() {
     return(
-        <div className='my-about' id='about'>
+        <div data-aos="fade-up" className='my-about' id='about'>
             <p></p>
             <h1>About</h1>
 

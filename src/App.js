@@ -9,6 +9,11 @@ import Navbar from './component/com_navbar';
 import Skills from './component/com_skills';
 import Topbutton from './component/com_topbutton';
 import Work from './component/com_work';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// aos
+AOS.init();
 
 class App extends React.Component {
   render() {

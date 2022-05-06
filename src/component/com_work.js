@@ -9,7 +9,7 @@ import myresto from '../image/work/myResto.png';
 
 function Work() {
     return(
-        <div className='work' id='work'>
+        <div data-aos="fade-up" className='work' id='work'>
             <h1>Work</h1>
 
             <div className='container-work'>

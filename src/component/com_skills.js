@@ -4,7 +4,7 @@ import gambar from '../image/skills-01.png';
 
 function Skills() {
     return(
-        <div className='skills' id='skills'>
+        <div data-aos="fade-up" className='skills' id='skills'>
             <h1>Skills</h1>
 
             <div className='container-skills'>

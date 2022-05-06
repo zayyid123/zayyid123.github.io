@@ -8,7 +8,7 @@ import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 function Home() {    
     return(
         <div className='my-home' data-aos="fade-down">
-            <div className='home-profile'>
+            <div className='home-profile' data-aos="fade-right">
                 <h1 className='home_title'>Hi,<br/>I'am <span className="my-name">Zay<span>yid</span></span><br/> <span className="title-text">Web Developer</span></h1>
                 <a href='#contact' className='btn-contact'>Contact</a>
                 <div className='all-icon-home'>
@@ -17,7 +17,7 @@ function Home() {
                     <a href="https://www.linkedin.com/in/mochamad-zayyid-09178518b/" className='home-icon'><FaLinkedinIn></FaLinkedinIn></a>
                 </div>
             </div>
-            <div className='home-img'>
+            <div className='home-img' data-aos="fade-left">
                 <img src={gambar}></img>
             </div>
         </div>

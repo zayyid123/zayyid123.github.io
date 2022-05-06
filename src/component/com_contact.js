@@ -2,7 +2,7 @@ import './contact.css';
 
 function Contact() {
     return(
-        <div className='contact' id='contact'>
+        <div data-aos="fade-up" className='contact' id='contact'>
             <h1>Contact</h1>
 
             <div className="contact__container bd-grid">
