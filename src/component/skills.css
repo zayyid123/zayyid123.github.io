@@ -104,7 +104,7 @@
 }
 
 .bar .progress-line.React_js span {
-    width: 55%;
+    width: 70%;
 }
 
 .progress-line span::before {
@@ -155,7 +155,7 @@
 }
 
 .progress-line.React_js span::after {
-    content: "55%";
+    content: "70%";
 }
 
 @media screen and (max-width: 1030px) {
