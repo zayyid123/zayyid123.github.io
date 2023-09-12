@@ -3,7 +3,7 @@
 import './work.css';
 import sme from '../image/work/sme.png';
 import evorty from '../image/work/evorty.png';
-import adzan from '../image/work/adzan.png';
+import jemarisemut from '../image/work/jemarisemut.png';
 import ngaji from '../image/work/ngaji.png';
 import bookshelf from '../image/work/bookshelf.png';
 import myresto from '../image/work/myResto.png';
@@ -28,10 +28,10 @@ function Work() {
                     </div>
                 </a>
 
-                <a href='https://zayyid123.github.io/jadwalAdzan.co.github.io/' className ="card" terget="_blank">
-                    <img src={adzan}/>
+                <a href='https://jemarisemut.vercel.app/' className ="card" terget="_blank">
+                    <img src={jemarisemut}/>
                     <div className ="container">
-                        <h4>Jadwal Adzan</h4> 
+                        <h4>Jemari Semut</h4> 
                     </div>
                 </a>
 
