@@ -7,7 +7,7 @@ import Footer from './component/com_footer';
 import Home from './component/com_home';
 import Navbar from './component/com_navbar';
 import Skills from './component/com_skills';
-import Topbutton from './component/com_topbutton';
+// import Topbutton from './component/com_topbutton';
 import Work from './component/com_work';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -31,7 +31,7 @@ class App extends React.Component {
             <Skills></Skills>
             <Work></Work>
             <Contact></Contact>
-            <Topbutton></Topbutton>
+            {/* <Topbutton></Topbutton> */}
           </div>
         <Footer></Footer>
       </div>
