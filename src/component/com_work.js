@@ -5,7 +5,7 @@ import sme from '../image/work/sme.png';
 import evorty from '../image/work/evorty.png';
 import jemarisemut from '../image/work/jemarisemut.png';
 import ngaji from '../image/work/ngaji.png';
-import bookshelf from '../image/work/bookshelf.png';
+import samawa from '../image/work/samawa.png';
 import myresto from '../image/work/myResto.png';
 
 function Work() {
@@ -42,10 +42,10 @@ function Work() {
                     </div>
                 </a>
 
-                <a href='https://zayyid123.github.io/bookShelf-Natife.github.io/' className ="card" terget="_blank">
-                    <img src={bookshelf}/>
+                <a href='https://www.samawa.top/' className ="card" terget="_blank">
+                    <img src={samawa}/>
                     <div className ="container">
-                        <h4>Book Shelf</h4> 
+                        <h4>Samawa.top</h4> 
                     </div>
                 </a>
 
