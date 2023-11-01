@@ -12,6 +12,15 @@ import ImageAbout from '../assets/image/pic_about.png'
 import CountNumber from './components/CountNumber'
 import ButtonDownloadCV from './components/ButtonDownloadCV'
 
+// skills
+import IconHtml from '../assets/icon/skills/html.png'
+import IconCss from '../assets/icon/skills/css.png'
+import IconJs from '../assets/icon/skills/javascript.png'
+import IconReact from '../assets/icon/skills/react.png'
+import IconNextjs from '../assets/icon/skills/nextjs.png'
+import IconTailwind from '../assets/icon/skills/tailwind.png'
+import IconBootstrap from '../assets/icon/skills/bootstrap.png'
+
 // data work latest
 const dataWorkLatest = [
   {
@@ -241,7 +250,7 @@ export default function Home() {
                       alt={`item porto ${index}`}
                       width={300}
                       height={600}
-                      className='object-cover w-full h-full rounded-md group-hover:h-[110%] ease-in-out duration-300'
+                      className='object-cover w-full h-full rounded-md transform group-hover:scale-110 ease-in-out duration-300'
                     />
                     <div
                       className='absolute bottom-5 left-5 z-10'
@@ -255,6 +264,76 @@ export default function Home() {
                 )
               })
             }
+          </div>
+        </div>
+      </div>
+
+      {/* skills */}
+      <div
+        className='bg-bg-200 w-full'
+      >
+        {/* inner */}
+        <div
+          className='max-w-6xl m-auto py-28 px-5'
+        >
+          {/* title */}
+          <div className='w-full text-center text-def-orange-300 mb-8'>SKILLS</div>
+
+          {/* caption */}
+          <div className='w-full text-[#391400] font-bold text-center text-4xl md:text-5xl max-w-md m-auto'>Several mastered technologies</div>
+
+          {/* skills */}
+          <div
+            className='flex justify-center items-center flex-wrap mt-16'
+          >
+            {/* html */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconHtml} alt='icon html' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* css */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconCss} alt='icon css' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* js */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconJs} alt='icon js' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* react */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconReact} alt='icon react' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* next */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconNextjs} alt='icon next' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* tailwind */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconTailwind} alt='icon tailwind' className='drop-shadow-lg m-3'/>
+            </div>
+
+            {/* bootstrap */}
+            <div
+              className='group p-8 w-[250px] transform hover:scale-110 ease-in-out duration-300'
+            >
+              <Image src={IconBootstrap} alt='icon bootstrap' className='drop-shadow-lg m-3'/>
+            </div>
           </div>
         </div>
       </div>
