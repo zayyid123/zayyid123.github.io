@@ -16,66 +16,70 @@ const Navbar = () => {
 
   return (
     <div
-      className='bg-bg-100 text-white sticky top-0 z-20'
+      className='bg-bg-100 text-white sticky top-0 z-30 w-full'
     >
       <div
-        className='flex justify-between items-center bg-bg-100 px-6 py-3 max-w-7xl m-auto min-h-[80px] absolute w-full z-20'
+        className='bg-bg-100 px-16 py-3 min-h-[80px] absolute w-full z-20'
       >
-        {/* logo */}
         <div
-          className='font-bold text-def-orange-300 px-8 text-xl cursor-pointer'
+          className='flex justify-between items-center max-w-7xl m-auto'
         >
-          <div className={logo.className}>ZAY<span className='text-white'>YID</span></div>
-        </div>
-
-        {/* menu desktop */}
-        <div
-          className='hidden lg:flex gap-20 font-light text-base text-[#ffffffa8]'
-        >
-          {/* about */}
+          {/* logo */}
           <div
-            className='cursor-pointer hover:text-white ease-in-out duration-300'
+            className='font-bold text-def-orange-300 pr-16 text-xl cursor-pointer'
           >
-            <p>About</p>
+            <div className={logo.className}>ZAY<span className='text-white'>YID</span></div>
           </div>
 
-          {/* services */}
+          {/* menu desktop */}
           <div
-            className='cursor-pointer hover:text-white ease-in-out duration-300'
+            className='hidden lg:flex gap-20 font-light text-base text-[#ffffffa8]'
           >
-            <p>Services</p>
+            {/* about */}
+            <div
+              className='cursor-pointer hover:text-white ease-in-out duration-300'
+            >
+              <p>About</p>
+            </div>
+
+            {/* services */}
+            <div
+              className='cursor-pointer hover:text-white ease-in-out duration-300'
+            >
+              <p>Services</p>
+            </div>
+
+            {/* pricing */}
+            <div
+              className='cursor-pointer hover:text-white ease-in-out duration-300'
+            >
+              <p>Pricing</p>
+            </div>
+
+            {/* blog */}
+            <div
+              className='cursor-pointer hover:text-white ease-in-out duration-300'
+            >
+              <p>Blog</p>
+            </div>
           </div>
 
-          {/* pricing */}
+          {/* contact */}
           <div
-            className='cursor-pointer hover:text-white ease-in-out duration-300'
+            className='hidden lg:block font-bold text-sm py-3 px-8 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
           >
-            <p>Pricing</p>
+            <p>CONTACT</p>
           </div>
 
-          {/* blog */}
+          {/* hamburger button */}
           <div
-            className='cursor-pointer hover:text-white ease-in-out duration-300'
+            className='group block lg:hidden font-bold text-sm py-2 px-4 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
+            onClick={() => {
+              setisOPen(!isOPen)
+            }}
           >
-            <p>Blog</p>
+            <Bars3Icon className='h-6 w-6 text-white group-hover:text-bg-100'/>
           </div>
-        </div>
-
-        {/* contact */}
-        <div
-          className='hidden lg:block font-bold text-sm py-3 px-8 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
-        >
-          <p>CONTACT</p>
-        </div>
-
-        {/* hamburger button */}
-        <div
-          className='group block lg:hidden font-bold text-sm py-2 px-4 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
-          onClick={() => {
-            setisOPen(!isOPen)
-          }}
-        >
-          <Bars3Icon className='h-6 w-6 text-white group-hover:text-bg-100'/>
         </div>
       </div>
 
