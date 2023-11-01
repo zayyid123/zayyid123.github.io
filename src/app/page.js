@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { BeakerIcon } from '@heroicons/react/24/solid'
+import { CalendarDaysIcon, BriefcaseIcon } from '@heroicons/react/24/solid'
 
 // image
 import IconOval from '../assets/icon/oval.png'
@@ -8,6 +8,9 @@ import IconPanahAtas from '../assets/icon/panah_atas.png'
 import IconStar from '../assets/icon/star.png'
 import IconPena from '../assets/icon/pena.png'
 import FotoCV from '../assets/image/foto_cv.png'
+import ImageAbout from '../assets/image/pic_about.png'
+import CountNumber from './components/CountNumber'
+import ButtonDownloadCV from './components/ButtonDownloadCV'
 
 export default function Home() {
   return (
@@ -88,6 +91,85 @@ export default function Home() {
 
             {/* oval */}
             <Image src={IconOval} alt='icon oval'/>
+          </div>
+        </div>
+      </div>
+
+      {/* about */}
+      <div
+        className='bg-bg-200 w-full'
+      >
+        {/* inner container about */}
+        <div
+          className='flex items-center gap-11 flex-col lg:flex-row max-w-6xl m-auto py-28 px-5'
+        >
+          <div
+            className='w-[100%] flex justify-center items-center mb-7 lg:mb-0 relative'
+          >
+            {/* image cv */}
+            <div
+              className='absolute w-[140px] h-[140px] bg-def-purple-300 p-5 rounded-full overflow-hidden top-0 left-30 md:left-72 lg:left-28'
+            >
+              <Image src={FotoCV} alt='foto cv about'/>
+            </div>
+
+            {/* image variasi */}
+            <Image src={ImageAbout} alt='image about' className='w-[300px]'/>
+          </div>
+          <div
+            className='w-[100%] flex items-center flex-col lg:block'
+          >
+            <div
+              className='flex items-start flex-col'
+            >
+              {/* name */}
+              <div className='text-[#ef6d58] mb-4 text-lg text-left'>Mochamad Muzayyid Al Hakim, S.Kom.</div>
+
+              {/* title */}
+              <div className='text-[#391400] font-bold text-4xl lg:text-5xl mb-2 max-w-lg'>Professional Frontend Developer</div>
+
+              {/* caption */}
+              <div className='text-[#391400] mb-5 text-lg font-semibold'>Work with passion</div>
+
+              {/* description */}
+              <div className='text-[#7f6454] max-w-lg'>Equipped with a passion for crafting visually appealing and intuitive user interfaces, I am dedicated to delivering exceptional user experiences.</div>
+
+              <ButtonDownloadCV/>
+            </div>
+          </div>
+        </div>
+
+        {/* inner calculate project */}
+        <div
+          className='flex justify-center items-center m-auto flex-wrap max-w-6xl pb-10 px-5'
+        >
+          <div
+            className='px-8 py-4 border-t md:border-y border-x md:border-l md:border-r-0 border-def-orange-300 w-[100%] md:w-[50%]'
+          >
+            <div
+              className='flex justify-start items-center'
+            >
+              <div
+                className='bg-def-orange-300 w-fit p-2 rounded-full mr-4'
+              >
+                <CalendarDaysIcon className='w-10 h-10 text-white'/>
+              </div>
+              <CountNumber start={-875.039} end={4} duration={1.5} title={'Experience as a Programmer'}/>
+            </div>
+          </div>
+          <div
+            className='px-8 py-4 border border-def-orange-300 w-[100%] md:w-[50%]'
+          >
+            <div
+              className='flex justify-start items-center'
+            >
+              <div
+                className='bg-def-orange-300 w-fit p-2 rounded-full mr-4'
+              >
+                <BriefcaseIcon className='w-10 h-10 text-white'/>
+              </div>
+              <CountNumber start={-875.039} end={50} duration={1.5} title={'Projects Done'}/>
+            </div>
           </div>
         </div>
       </div>
