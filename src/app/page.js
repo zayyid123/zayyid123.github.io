@@ -12,6 +12,25 @@ import ImageAbout from '../assets/image/pic_about.png'
 import CountNumber from './components/CountNumber'
 import ButtonDownloadCV from './components/ButtonDownloadCV'
 
+// data work latest
+const dataWorkLatest = [
+  {
+    name: 'WhatsApp Clone',
+    image: 'https://raw.githubusercontent.com/zayyid123/WhatsApp_Clone-mobile/main/whastapp-clone-1x1.png',
+    project: 'Mobile',
+  },
+  {
+    name: 'Al-Kalam',
+    image: 'https://raw.githubusercontent.com/zayyid123/al-kalam-mobile/main/al%20kalam%20mobile.png',
+    project: 'Mobile',
+  },
+  {
+    name: 'Simple Calculator',
+    image: 'https://raw.githubusercontent.com/zayyid123/simple-calculator-mobile/main/simple-calculator-1x1.png',
+    project: 'Mobile',
+  },
+]
+
 export default function Home() {
   return (
     <main className="pt-[80px]">
@@ -170,6 +189,72 @@ export default function Home() {
               </div>
               <CountNumber start={-875.039} end={50} duration={1.5} title={'Projects Done'}/>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* portfolio */}
+      <div
+        className='bg-bg-100 w-full'
+      >
+        {/* inner */}
+        <div
+          className='max-w-6xl m-auto py-28 px-5'
+        >
+          {/* header */}
+          <div
+            className='flex justify-between items-start lg:items-end flex-col lg:flex-row gap-7 w-full px-10 mb-16'
+          >
+            <div>
+              <div
+                className='text-def-orange-300 text-lg'
+              >
+                PORTFOLIO
+              </div>
+              <div
+                className='text-white text-4xl font-bold'
+              >
+                Latest Work
+              </div>
+            </div>
+
+            <div
+              className='font-bold text-sm text-white py-3 px-8 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
+            >
+              EXPLORE MORE
+            </div>
+          </div>
+
+          {/* work */}
+          <div
+            className='flex justify-center items-center flex-wrap gap-4'
+          >
+            {
+              dataWorkLatest.map((res, index) => {
+                return(
+                  <div 
+                    key={'itemCardPorto'+index}
+                    className='group bg-def-orange-100 max-w-[330px] h-[500px] rounded-md relative overflow-hidden cursor-pointer'
+                  >
+                    <Image 
+                      src={res.image} 
+                      alt={`item porto ${index}`}
+                      width={300}
+                      height={600}
+                      className='object-cover w-full h-full rounded-md group-hover:h-[110%] ease-in-out duration-300'
+                    />
+                    <div
+                      className='absolute bottom-5 left-5 z-10'
+                    >
+                      <div className='bg-white group-hover:bg-def-orange-300 group-hover:text-white ease-in-out duration-300 drop-shadow-lg text-center rounded-full text-bg-100 py-1 px-4 mb-1 w-fit'>
+                        <div>{res.project}</div>
+                      </div>
+                      <div className='text-white group-hover:text-def-orange-300 ease-in-out duration-300 drop-shadow-md font-bold text-xl px-1'>{res.name}</div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
