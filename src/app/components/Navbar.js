@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Mochiy_Pop_P_One } from 'next/font/google'
+import { useRouter } from 'next/navigation'
 
 // font logo
 const logo = Mochiy_Pop_P_One({
@@ -12,6 +13,7 @@ const logo = Mochiy_Pop_P_One({
 import { Bars3Icon } from '@heroicons/react/24/solid'
 
 const Navbar = () => {
+  const router = useRouter()
   const [isOPen, setisOPen] = useState(false)
 
   return (
@@ -27,6 +29,9 @@ const Navbar = () => {
           {/* logo */}
           <div
             className='font-bold text-def-orange-300 pr-16 text-xl cursor-pointer'
+            onClick={() => {
+              router.push('/#home')
+            }}
           >
             <div className={logo.className}>ZAY<span className='text-white'>YID</span></div>
           </div>
@@ -38,22 +43,28 @@ const Navbar = () => {
             {/* about */}
             <div
               className='cursor-pointer hover:text-white ease-in-out duration-300'
+              onClick={() => {
+                router.push('/#about')
+              }}
             >
               <p>About</p>
             </div>
 
-            {/* services */}
+            {/* Portfolio */}
             <div
               className='cursor-pointer hover:text-white ease-in-out duration-300'
             >
-              <p>Services</p>
+              <p>Portfolio</p>
             </div>
 
-            {/* pricing */}
+            {/* Skills */}
             <div
               className='cursor-pointer hover:text-white ease-in-out duration-300'
+              onClick={() => {
+                router.push('/#skills')
+              }}
             >
-              <p>Pricing</p>
+              <p>Skills</p>
             </div>
 
             {/* blog */}
@@ -67,6 +78,9 @@ const Navbar = () => {
           {/* contact */}
           <div
             className='hidden lg:block font-bold text-sm py-3 px-8 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
+            onClick={() => {
+              router.push('/#contact')
+            }}
           >
             <p>CONTACT</p>
           </div>
@@ -85,7 +99,7 @@ const Navbar = () => {
 
       {/* menu mobile */}
       <div 
-        className={`block lg:hidden absolute ${isOPen ? 'top-[80px]' : 'top-[-120px]'} ease-in-out duration-300 right-0 left-0 bg-def-orange-100 text-black`}
+        className={`block lg:hidden absolute ${isOPen ? 'top-[80px]' : 'top-[-170px]'} ease-in-out duration-300 right-0 left-0 bg-def-orange-100 text-black`}
       >
         <div
           className='font-light items-center flex flex-col text-base text-bg-100 gap-5 py-5'
@@ -93,22 +107,30 @@ const Navbar = () => {
           {/* about */}
           <div
             className='cursor-pointer hover:text-white ease-in-out duration-300'
+            onClick={() => {
+              router.push('/#about')
+              setisOPen(false)
+            }}
           >
             <p>About</p>
           </div>
 
-          {/* services */}
+          {/* Portfolio */}
           <div
             className='cursor-pointer hover:text-white ease-in-out duration-300'
           >
-            <p>Services</p>
+            <p>Portfolio</p>
           </div>
 
-          {/* pricing */}
+          {/* Skills */}
           <div
             className='cursor-pointer hover:text-white ease-in-out duration-300'
+            onClick={() => {
+              router.push('/#skills')
+              setisOPen(false)
+            }}
           >
-            <p>Pricing</p>
+            <p>Skills</p>
           </div>
 
           {/* blog */}
@@ -116,6 +138,17 @@ const Navbar = () => {
             className='cursor-pointer hover:text-white ease-in-out duration-300'
           >
             <p>Blog</p>
+          </div>
+
+          {/* Contact */}
+          <div
+            className='cursor-pointer text-white ease-in-out duration-300 bg-bg-100 px-3 py-1 rounded-md hover:bg-def-orange-300 hover:text-white'
+            onClick={() => {
+              router.push('/#contact')
+              setisOPen(false)
+            }}
+          >
+            <p>Contact</p>
           </div>
         </div>
       </div>

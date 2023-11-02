@@ -71,6 +71,7 @@ export default function Home() {
     <main className="pt-[80px]">
       {/* home */}
       <div 
+        id='home'
         className='bg-bg-100 w-full'
       >
         {/* inner container */}
@@ -151,6 +152,7 @@ export default function Home() {
 
       {/* about */}
       <div
+        id='about'
         className='bg-bg-200 w-full'
       >
         {/* inner container about */}
@@ -230,6 +232,7 @@ export default function Home() {
 
       {/* portfolio */}
       <div
+        id='portfolio'
         className='bg-bg-100 w-full'
       >
         {/* inner */}
@@ -296,6 +299,7 @@ export default function Home() {
 
       {/* skills */}
       <div
+        id='skills'
         className='bg-bg-200 w-full'
       >
         {/* inner */}
@@ -366,6 +370,7 @@ export default function Home() {
 
       {/* latest blog */}
       <div
+        id='latest_blog'
         className='bg-[#f9e5da] w-full'
       >
         {/* inner */}
@@ -405,6 +410,7 @@ export default function Home() {
 
       {/* contact */}
       <div
+        id='contact'
         className='bg-bg-100 w-full'
       >
         <div
