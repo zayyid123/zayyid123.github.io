@@ -484,9 +484,25 @@ export default function Home() {
         className='bg-bg-200 w-full'
       >
         <div
-          className='max-w-6xl m-auto py-10 px-5'
+          className='max-w-6xl m-auto py-28'
         >
-          <div>hiasan</div>
+          <div className='w-full text-center text-def-orange-300 mb-8 text-lg'>MAPS</div>
+
+          {/* caption */}
+          <div className='w-full text-[#391400] font-bold text-center text-4xl md:text-5xl max-w-md m-auto'>Find Me</div>
+
+          <div 
+            className='bg-white rounded-md p-3 mt-8 mx-3'
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15818.967327491184!2d112.75066323332076!3d-7.603049428589278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7db9dc6a5aca3%3A0xae4a49ccd9c92f78!2sGajahbendo%2C%20Kec.%20Beji%2C%20Pasuruan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1698918482980!5m2!1sid!2sid" 
+              width="100%" 
+              height="450" 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </main>
