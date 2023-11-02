@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { CalendarDaysIcon, BriefcaseIcon } from '@heroicons/react/24/solid'
 
 // image
 import IconOval from '../assets/icon/oval.png'
@@ -21,6 +20,10 @@ import IconNextjs from '../assets/icon/skills/nextjs.png'
 import IconTailwind from '../assets/icon/skills/tailwind.png'
 import IconBootstrap from '../assets/icon/skills/bootstrap.png'
 import LatestBlog from './components/LatestBlog'
+import FormContact from './components/FormContact'
+
+// icon
+import { CalendarDaysIcon, BriefcaseIcon, MapPinIcon, PhoneIcon, EnvelopeIcon  } from '@heroicons/react/24/solid'
 
 // data work latest
 const dataWorkLatest = [
@@ -300,7 +303,7 @@ export default function Home() {
           className='max-w-6xl m-auto py-28 px-5'
         >
           {/* title */}
-          <div className='w-full text-center text-def-orange-300 mb-8'>SKILLS</div>
+          <div className='w-full text-center text-def-orange-300 mb-8 text-lg'>SKILLS</div>
 
           {/* caption */}
           <div className='w-full text-[#391400] font-bold text-center text-4xl md:text-5xl max-w-md m-auto'>Several mastered technologies</div>
@@ -397,6 +400,93 @@ export default function Home() {
           <div>
             <LatestBlog data={dataBlogLatest}/>
           </div>
+        </div>
+      </div>
+
+      {/* contact */}
+      <div
+        className='bg-bg-100 w-full'
+      >
+        <div
+          className='max-w-6xl m-auto py-28 px-5'
+        >
+          <div
+            className='flex justify-between items-start gap-8 lg:gap-36 flex-col-reverse lg:flex-row'
+          >
+            <div
+              className='w-[100%] lg:w-[50%]'
+            >
+              <div
+                className='bg-white p-4 rounded-md w-full'
+              >
+                <div className='text-[#391400] font-bold text-3xl mb-5'>Get In Touch</div>
+
+                <FormContact/>
+              </div>
+            </div>
+            <div
+              className='w-[100%] lg:w-[50%]'
+            >
+              <div className='text-def-orange-300 text-lg mb-5'>CONTACT</div>
+
+              <div className='text-white text-4xl font-bold mb-2'>Contact Me</div>
+
+              <div className='text-[#b7b7b7] text-sm mb-7'>You can contact me below</div>
+
+              {/* alamat */}
+              <div
+                className='flex gap-2 items-center mb-6'
+              >
+                {/* icon */}
+                <div
+                  className='bg-def-orange-300 w-fit p-2 rounded-full'
+                >
+                  <MapPinIcon className='w-[30px]' fill='#fff'/>
+                </div>
+
+                <div className='text-white font-light text-base'>Jawa Timur, Pasuruan, Kec. Beji, RT. 11, RW. 05 </div>
+              </div>
+
+              {/* phone */}
+              <div
+                className='flex gap-2 items-center mb-6'
+              >
+                {/* icon */}
+                <div
+                  className='bg-def-orange-300 w-fit p-2 rounded-full'
+                >
+                  <PhoneIcon className='w-[30px]' fill='#fff'/>
+                </div>
+
+                <div className='text-white font-light text-base'>+62 8573-1003-893</div>
+              </div>
+
+              {/* phone */}
+              <div
+                className='flex gap-2 items-center mb-6'
+              >
+                {/* icon */}
+                <div
+                  className='bg-def-orange-300 w-fit p-2 rounded-full'
+                >
+                  <EnvelopeIcon className='w-[30px]' fill='#fff'/>
+                </div>
+
+                <div className='text-white font-light text-base'>mochamadzayyid@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* hiasan */}
+      <div
+        className='bg-bg-200 w-full'
+      >
+        <div
+          className='max-w-6xl m-auto py-10 px-5'
+        >
+          <div>hiasan</div>
         </div>
       </div>
     </main>
