@@ -20,6 +20,7 @@ import IconReact from '../assets/icon/skills/react.png'
 import IconNextjs from '../assets/icon/skills/nextjs.png'
 import IconTailwind from '../assets/icon/skills/tailwind.png'
 import IconBootstrap from '../assets/icon/skills/bootstrap.png'
+import LatestBlog from './components/LatestBlog'
 
 // data work latest
 const dataWorkLatest = [
@@ -37,6 +38,28 @@ const dataWorkLatest = [
     name: 'Simple Calculator',
     image: 'https://raw.githubusercontent.com/zayyid123/simple-calculator-mobile/main/simple-calculator-1x1.png',
     project: 'Mobile',
+  },
+]
+
+// data blog latest
+const dataBlogLatest = [
+  {
+    image: 'https://placehold.co/600x400.png',
+    title: 'Agency is a business you hire to outsource',
+    category: 'Stories',
+    date: '5 Nov, 2021'
+  },
+  {
+    image: 'https://placehold.co/600x400.png',
+    title: 'Outsource your digital marketing efforts',
+    category: 'Design',
+    date: '29 Oct, 2021'
+  },
+  {
+    image: 'https://placehold.co/600x400.png',
+    title: 'Your business with a variety of digital',
+    category: 'Marketing',
+    date: '21 Oct, 2021'
   },
 ]
 
@@ -334,6 +357,45 @@ export default function Home() {
             >
               <Image src={IconBootstrap} alt='icon bootstrap' className='drop-shadow-lg m-3'/>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* latest blog */}
+      <div
+        className='bg-[#f9e5da] w-full'
+      >
+        {/* inner */}
+        <div
+          className='max-w-6xl m-auto py-28 px-5'
+        >
+          {/* header */}
+          <div
+            className='flex justify-between items-start lg:items-end flex-col lg:flex-row gap-7 w-full px-10 mb-16'
+          >
+            <div>
+              <div
+                className='text-def-orange-300 text-lg'
+              >
+                OUR BLOG
+              </div>
+              <div
+                className='text-[#391400] text-4xl font-bold'
+              >
+                Latest Blog Articles
+              </div>
+            </div>
+
+            <div
+              className='font-bold text-sm text-bg-100 bg-white py-3 px-8 border border-white rounded-md drop-shadow-lg cursor-pointer hover:bg-bg-100 hover:text-def-orange-300 hover:border-bg-100 ease-in-out duration-300'
+            >
+              DISCOVER ALL
+            </div>
+          </div>
+
+          {/* blog */}
+          <div>
+            <LatestBlog data={dataBlogLatest}/>
           </div>
         </div>
       </div>
