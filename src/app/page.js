@@ -24,6 +24,7 @@ import FormContact from './components/FormContact'
 
 // icon
 import { CalendarDaysIcon, BriefcaseIcon, MapPinIcon, PhoneIcon, EnvelopeIcon  } from '@heroicons/react/24/solid'
+import ButtonExploreMore from './components/ButtonExploreMore'
 
 // data work latest
 const dataWorkLatest = [
@@ -256,11 +257,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              className='font-bold text-sm text-white py-3 px-8 border border-[#747474] rounded-md cursor-pointer hover:bg-def-orange-300 hover:text-bg-100 hover:border-bg-100 ease-in-out duration-300'
-            >
-              EXPLORE MORE
-            </div>
+            <ButtonExploreMore/>
           </div>
 
           {/* work */}
