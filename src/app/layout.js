@@ -1,6 +1,7 @@
 import { Epilogue } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const epilogue = Epilogue({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={epilogue.className}>
         <Navbar/>
         <div>{children}</div>
+        <Footer/>
       </body>
     </html>
   )
