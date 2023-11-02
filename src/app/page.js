@@ -25,6 +25,7 @@ import FormContact from './components/FormContact'
 // icon
 import { CalendarDaysIcon, BriefcaseIcon, MapPinIcon, PhoneIcon, EnvelopeIcon  } from '@heroicons/react/24/solid'
 import ButtonExploreMore from './components/ButtonExploreMore'
+import CardWork from './components/CardWork'
 
 // data work latest
 const dataWorkLatest = [
@@ -269,23 +270,8 @@ export default function Home() {
                 return(
                   <div 
                     key={'itemCardPorto'+index}
-                    className='group bg-def-orange-100 max-w-[330px] h-[500px] rounded-md relative overflow-hidden cursor-pointer'
                   >
-                    <Image 
-                      src={res.image} 
-                      alt={`item porto ${index}`}
-                      width={300}
-                      height={600}
-                      className='object-cover w-full h-full rounded-md transform group-hover:scale-110 ease-in-out duration-300'
-                    />
-                    <div
-                      className='absolute bottom-5 left-5 z-10'
-                    >
-                      <div className='bg-white group-hover:bg-def-orange-300 group-hover:text-white ease-in-out duration-300 drop-shadow-lg text-center rounded-full text-bg-100 py-1 px-4 mb-1 w-fit'>
-                        <div>{res.project}</div>
-                      </div>
-                      <div className='text-white group-hover:text-def-orange-300 ease-in-out duration-300 drop-shadow-md font-bold text-xl px-1'>{res.name}</div>
-                    </div>
+                    <CardWork data={res} index={index}/>
                   </div>
                 )
               })
