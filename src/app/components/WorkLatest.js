@@ -44,7 +44,7 @@ const WorkLatest = () => {
             <div 
               key={'itemCardPorto'+index}
             >
-              <CardWork data={res} index={index} height={500}/>
+              <CardWork data={res} index={index} isHeight={true} />
             </div>
           )
         })

@@ -1,10 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
-const CardWork = ({ data, index, height = 500 }) => {
+const CardWork = ({ data, index, isHeight = true }) => {
+  const router = useRouter()
+
   return (
     <div
-      className={`group bg-def-orange-100 max-w-[330px] h-[${height.toString()}px] rounded-md relative overflow-hidden cursor-pointer`}
+      className={`group bg-def-orange-100 max-w-[330px] ${isHeight ? 'h-[500px]' : 'h-[300px]'} rounded-md relative overflow-hidden cursor-pointer drop-shadow-md`}
+      onClick={() => {
+        router.push(`/portfolio/detail/${data.id}`)
+      }}
     >
       
       <Image 
