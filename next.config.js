@@ -4,6 +4,15 @@ module.exports = {
     sass: true,
     modules: true,
     images: {
-        domains: ['raw.githubusercontent.com', 'placehold.co'],
-    }
+        remotePatterns: [
+          {
+            protocol: "https",
+            hostname: "raw.githubusercontent.com",
+          },
+          {
+            protocol: "https",
+            hostname: "placehold.co",
+          },
+        ],
+    },
 };

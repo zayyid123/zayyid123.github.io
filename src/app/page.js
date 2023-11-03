@@ -28,6 +28,7 @@ import LatestBlog from './components/LatestBlog'
 import FormContact from './components/FormContact'
 import CountNumber from './components/CountNumber'
 import ButtonDownloadCV from './components/ButtonDownloadCV'
+import ButtonSeeMyWork from './components/ButtonSeeMyWork'
 
 // data blog latest
 const dataBlogLatest = [
@@ -77,11 +78,7 @@ export default function Home() {
             <div className='text-[#ffffffa8] max-w-sm text-sm mb-6 text-center lg:text-left'>Highly skilled and motivated Front-End Developer with a strong proficiency in React.js.</div>
 
             {/* button work */}
-            <div
-              className='group bg-def-orange-300 hover:bg-gray-600 flex justify-center items-center w-fit px-5 py-3 rounded-md cursor-pointer ease-in-out duration-300'
-            >
-              <p className='font-bold'>SEE MY WORK</p>
-            </div>
+            <ButtonSeeMyWork/>
           </div>
 
           {/* kanan */}
