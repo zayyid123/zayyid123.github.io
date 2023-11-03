@@ -4,7 +4,7 @@ import Image from 'next/image'
 const CardWork = ({ data, index, height = 500 }) => {
   return (
     <div
-      className={`group bg-def-orange-100 max-w-[330px] h-[${height}px] rounded-md relative overflow-hidden cursor-pointer`}
+      className={`group bg-def-orange-100 max-w-[330px] h-[${height.toString()}px] rounded-md relative overflow-hidden cursor-pointer`}
     >
       
       <Image 

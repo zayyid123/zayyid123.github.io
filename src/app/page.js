@@ -8,8 +8,6 @@ import IconStar from '../assets/icon/star.png'
 import IconPena from '../assets/icon/pena.png'
 import FotoCV from '../assets/image/foto_cv.png'
 import ImageAbout from '../assets/image/pic_about.png'
-import CountNumber from './components/CountNumber'
-import ButtonDownloadCV from './components/ButtonDownloadCV'
 
 // skills
 import IconHtml from '../assets/icon/skills/html.png'
@@ -19,32 +17,17 @@ import IconReact from '../assets/icon/skills/react.png'
 import IconNextjs from '../assets/icon/skills/nextjs.png'
 import IconTailwind from '../assets/icon/skills/tailwind.png'
 import IconBootstrap from '../assets/icon/skills/bootstrap.png'
-import LatestBlog from './components/LatestBlog'
-import FormContact from './components/FormContact'
 
 // icon
 import { CalendarDaysIcon, BriefcaseIcon, MapPinIcon, PhoneIcon, EnvelopeIcon  } from '@heroicons/react/24/solid'
-import ButtonExploreMore from './components/ButtonExploreMore'
-import CardWork from './components/CardWork'
 
-// data work latest
-const dataWorkLatest = [
-  {
-    name: 'WhatsApp Clone',
-    image: 'https://raw.githubusercontent.com/zayyid123/WhatsApp_Clone-mobile/main/whastapp-clone-1x1.png',
-    project: 'Mobile',
-  },
-  {
-    name: 'Al-Kalam',
-    image: 'https://raw.githubusercontent.com/zayyid123/al-kalam-mobile/main/al%20kalam%20mobile.png',
-    project: 'Mobile',
-  },
-  {
-    name: 'Simple Calculator',
-    image: 'https://raw.githubusercontent.com/zayyid123/simple-calculator-mobile/main/simple-calculator-1x1.png',
-    project: 'Mobile',
-  },
-]
+// components
+import ButtonExploreMore from './components/ButtonExploreMore'
+import WorkLatest from './components/WorkLatest'
+import LatestBlog from './components/LatestBlog'
+import FormContact from './components/FormContact'
+import CountNumber from './components/CountNumber'
+import ButtonDownloadCV from './components/ButtonDownloadCV'
 
 // data blog latest
 const dataBlogLatest = [
@@ -261,22 +244,7 @@ export default function Home() {
             <ButtonExploreMore/>
           </div>
 
-          {/* work */}
-          <div
-            className='flex justify-center items-center flex-wrap gap-4'
-          >
-            {
-              dataWorkLatest.map((res, index) => {
-                return(
-                  <div 
-                    key={'itemCardPorto'+index}
-                  >
-                    <CardWork data={res} index={index}/>
-                  </div>
-                )
-              })
-            }
-          </div>
+          <WorkLatest/>
         </div>
       </div>
 
