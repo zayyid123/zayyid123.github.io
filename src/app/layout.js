@@ -14,9 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={epilogue.className}>
-        <Navbar/>
-        <div>{children}</div>
-        <Footer/>
+        {children}
       </body>
     </html>
   )
