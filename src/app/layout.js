@@ -1,7 +1,6 @@
 import { Epilogue } from 'next/font/google'
 import './globals.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import { AuthContextProvider } from './context/AuthContext'
 
 const epilogue = Epilogue({ subsets: ['latin'] })
 
@@ -14,7 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={epilogue.className}>
-        {children}
+        <AuthContextProvider>
+          {children}
+        </AuthContextProvider>
       </body>
     </html>
   )
