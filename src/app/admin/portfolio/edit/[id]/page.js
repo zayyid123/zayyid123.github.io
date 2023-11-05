@@ -30,7 +30,7 @@ const getToday = () => {
 };
 
 const EditPorfolio = ({ params }) => {
-  const { id } = params
+  const { id } = params;
   const router = useRouter();
   const [isLoading, setisLoading] = useState(false);
   const [formData, setformData] = useState({
@@ -52,12 +52,16 @@ const EditPorfolio = ({ params }) => {
     setisLoading(true);
     try {
       // ref database
-      const portfolioRef = doc(collection(db, "portfolio"));
+      const portfolioRef = doc(db, "portfolio", id);
 
       // upload to dtaabase
-      await setDoc(portfolioRef, {
-        ...formData,
-      })
+      await setDoc(
+        portfolioRef,
+        {
+          ...formData,
+        },
+        { merge: true }
+      )
         .then(() => {
           setisLoading(false);
           Swal.fire({
@@ -88,19 +92,19 @@ const EditPorfolio = ({ params }) => {
   };
 
   useEffect(() => {
-    const getDetailDataPortfolio = async() => {
+    const getDetailDataPortfolio = async () => {
       const docRef = doc(db, "portfolio", id);
       const docSnap = await getDoc(docRef);
-      const dataDetail = docSnap.data()
+      const dataDetail = docSnap.data();
 
       setformData({
         ...dataDetail,
-        createdAt: getToday()
-      })
-    }
+        createdAt: getToday(),
+      });
+    };
 
-    getDetailDataPortfolio()
-  }, [])
+    getDetailDataPortfolio();
+  }, []);
 
   return (
     <div>
