@@ -2,12 +2,22 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
-import { ChevronRightIcon, DocumentIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronRightIcon,
+  DocumentIcon,
+  ArrowLeftOnRectangleIcon,
+  BriefcaseIcon,
+} from "@heroicons/react/24/solid";
 
 const AdminLayout = ({ children }) => {
   const router = useRouter();
   const { Logout, user } = UserAuth();
   const [isOpen, setisOpen] = useState(false);
+  const [selectedPage, setselectedPage] = useState("");
+
+  useEffect(() => {
+    setselectedPage(window.location.pathname)
+  }, [])
 
   return (
     <div>
@@ -41,8 +51,11 @@ const AdminLayout = ({ children }) => {
               <ul className="space-y-2 font-medium">
                 <li>
                   <div
-                    className="cursor-pointer flex items-center p-2 text-gray-900 rounded-lg hover:bg-def-orange-300 group ease-in-out duration-300"
+                    className={`${
+                      selectedPage === "/admin" && "bg-gray-500"
+                    } cursor-pointer flex items-center p-2 text-gray-900 rounded-lg hover:bg-def-orange-300 group ease-in-out duration-300`}
                     onClick={() => {
+                      setselectedPage("/admin");
                       router.push("/admin");
                       setisOpen(!isOpen);
                     }}
@@ -64,8 +77,11 @@ const AdminLayout = ({ children }) => {
                 </li>
                 <li>
                   <div
-                    className="cursor-pointer flex items-center p-2 text-gray-900 rounded-lg hover:bg-def-orange-300 group ease-in-out duration-300"
+                    className={`${
+                      selectedPage === "/admin/blog" && "bg-gray-500"
+                    } cursor-pointer flex items-center p-2 text-gray-900 rounded-lg hover:bg-def-orange-300 group ease-in-out duration-300`}
                     onClick={() => {
+                      setselectedPage("/admin/blog");
                       router.push("/admin/blog");
                       setisOpen(!isOpen);
                     }}
@@ -73,6 +89,23 @@ const AdminLayout = ({ children }) => {
                     <DocumentIcon className="w-5 text-white hover:text-bg-100" />
                     <span className="ml-3 text-white group-hover:text-bg-100">
                       Blog
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div
+                    className={`${
+                      selectedPage === "/admin/portfolio" && "bg-gray-500"
+                    } cursor-pointer flex items-center p-2 text-gray-900 rounded-lg hover:bg-def-orange-300 group ease-in-out duration-300`}
+                    onClick={() => {
+                      setselectedPage("/admin/portfolio");
+                      router.push("/admin/portfolio");
+                      setisOpen(!isOpen);
+                    }}
+                  >
+                    <BriefcaseIcon className="w-5 text-white hover:text-bg-100" />
+                    <span className="ml-3 text-white group-hover:text-bg-100">
+                      Porfolio
                     </span>
                   </div>
                 </li>
@@ -99,14 +132,12 @@ const AdminLayout = ({ children }) => {
           </div>
         </div>
       ) : (
-        <div
-          className="w-full h-screen flex justify-center items-center flex-col bg-bg-100"
-        >
+        <div className="w-full h-screen flex justify-center items-center flex-col bg-bg-100">
           <div className="text-white font-bold">Page Not Found</div>
-          <div 
+          <div
             className="mt-4 bg-def-orange-300 py-2 px-4 rounded-md font-semibold hover:bg-bg-200 cursor-pointer ease-in-out duration-300"
-            onClick={() =>{
-              router.push('/')
+            onClick={() => {
+              router.push("/");
             }}
           >
             Go Back
