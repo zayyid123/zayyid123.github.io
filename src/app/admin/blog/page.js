@@ -58,7 +58,7 @@ const PageBlogAdmin = () => {
             {/* detail */}
             <div
               className="text-white bg-blue-400 p-1 m-1 rounded-lg cursor-pointer hover:bg-blue-600"
-              // onClick={() => router.push(`/dashboard-admin/blog/${row.id}`)}
+              onClick={() => router.push(`/admin/blog/${row.id}`)}
             >
               <EyeIcon className="w-6" />
             </div>
