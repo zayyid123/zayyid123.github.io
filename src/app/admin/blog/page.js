@@ -66,7 +66,7 @@ const PageBlogAdmin = () => {
             {/* edit */}
             <div
               className="text-white bg-yellow-500 p-1 m-1 rounded-lg cursor-pointer hover:bg-yellow-600"
-              // onClick={() => router.push(`/dashboard-admin/blog/edit/${row.id}`)}
+              onClick={() => router.push(`/admin/blog/edit/${row.id}`)}
             >
               <PencilIcon className="w-6" />
             </div>
