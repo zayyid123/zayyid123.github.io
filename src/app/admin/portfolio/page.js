@@ -19,11 +19,14 @@ import CardTotal from "../components/CardTotal";
 import CardDataTable from "../components/CardDataTable";
 import TableCustom from "../components/TableCustom";
 
+// third party
+import Swal from "sweetalert2";
+
 // icon
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
 
 const PorfolioAdmin = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [allDataPortfolio, setallDataPortfolio] = useState([]);
   const [search, setsearch] = useState("");
   const columns = [
@@ -55,9 +58,9 @@ const PorfolioAdmin = () => {
             {/* delete */}
             <div
               className="text-white bg-red-400 p-1 m-1 rounded-lg cursor-pointer hover:bg-red-600"
-              // onClick={() => {
-              //   removeBlog(row.id, row.image_public_id)
-              // }}
+              onClick={() => {
+                removePortfolio(row.id)
+              }}
             >
               <TrashIcon className="w-6" />
             </div>
@@ -88,6 +91,39 @@ const PorfolioAdmin = () => {
 
     getAllDataPortfolio();
   }, []);
+
+  const removePortfolio = (id) => {
+    Swal.fire({
+      title: "Yakin ingin menhapus data?",
+      text: "Anda tidak akan bisa mengembalikan data ini lagi!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Tetap, Hapus!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        // delete data
+        await deleteDoc(doc(db, "portfolio", id))
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              text: "Data anda berhasil dihapus",
+            }).then((result) => {
+              if (result.isConfirmed == true) {
+                window.location.reload();
+              }
+            });
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              text: error,
+            });
+          });
+      }
+    });
+  };
 
   return (
     <div>
