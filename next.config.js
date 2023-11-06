@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  output: 'export',
+  distDir: 'dist',
   webpack5: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
@@ -10,6 +12,7 @@ module.exports = {
   sass: true,
   modules: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
