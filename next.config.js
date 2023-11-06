@@ -25,5 +25,5 @@ module.exports = {
       },
     ],
   },
-  basePath: '/',
+  basePath: '/github-pages',
 };
