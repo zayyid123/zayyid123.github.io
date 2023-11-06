@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   collection,
   getDocs,
@@ -12,9 +13,11 @@ import {
 
 // config
 import fbConfig from "../config/firebase";
+import removePunctuation from "../utils/removePunctuation";
 const db = getFirestore(fbConfig);
 
 const LatestBlog = () => {
+  const router = useRouter()
   const [dataBlogLatest, setdataBlogLatest] = useState();
 
   useEffect(() => {
@@ -49,6 +52,9 @@ const LatestBlog = () => {
           {/* card */}
           <div
             className="group cursor-pointer"
+            onClick={() => {
+              router.push(`/blog/${removePunctuation(dataBlogLatest[0].title).split(' ').join('-')}/${dataBlogLatest[0].id}`)
+            }}
           >
             <div
               className="w-full rounded-md mb-6 overflow-hidden"
@@ -84,7 +90,13 @@ const LatestBlog = () => {
           {dataBlogLatest.map((res, index) => {
             return (
               index !== 0 && (
-                <div key={"itemblog" + index} className="group mb-6 w-full cursor-pointer">
+                <div 
+                  key={"itemblog" + index} 
+                  className="group mb-6 w-full cursor-pointer"
+                  onClick={() => {
+                    router.push(`/blog/${removePunctuation(res.title).split(' ').join('-')}/${res.id}`)
+                  }}
+                >
                   <div
                     className="w-full rounded-md mb-6 overflow-hidden"
                   >

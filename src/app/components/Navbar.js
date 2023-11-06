@@ -73,6 +73,9 @@ const Navbar = () => {
             {/* blog */}
             <div
               className='cursor-pointer hover:text-white ease-in-out duration-300'
+              onClick={() => {
+                router.push('/blog')
+              }}
             >
               <p>Blog</p>
             </div>
@@ -143,6 +146,9 @@ const Navbar = () => {
           {/* blog */}
           <div
             className='cursor-pointer hover:text-white ease-in-out duration-300'
+            onClick={() => {
+              router.push('/blog')
+            }}
           >
             <p>Blog</p>
           </div>
