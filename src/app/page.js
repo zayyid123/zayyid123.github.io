@@ -37,28 +37,6 @@ import ButtonDownloadCV from "./components/ButtonDownloadCV";
 import ButtonSeeMyWork from "./components/ButtonSeeMyWork";
 import UserLayout from "./layout/UserLayout";
 
-// data blog latest
-const dataBlogLatest = [
-  {
-    image: "https://placehold.co/600x400.png",
-    title: "Agency is a business you hire to outsource",
-    category: "Stories",
-    date: "5 Nov, 2021",
-  },
-  {
-    image: "https://placehold.co/600x400.png",
-    title: "Outsource your digital marketing efforts",
-    category: "Design",
-    date: "29 Oct, 2021",
-  },
-  {
-    image: "https://placehold.co/600x400.png",
-    title: "Your business with a variety of digital",
-    category: "Marketing",
-    date: "21 Oct, 2021",
-  },
-];
-
 export default function Home() {
   return (
     <UserLayout>
@@ -345,7 +323,7 @@ export default function Home() {
 
             {/* blog */}
             <div>
-              <LatestBlog data={dataBlogLatest} />
+              <LatestBlog />
             </div>
           </div>
         </div>
