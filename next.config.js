@@ -25,4 +25,5 @@ module.exports = {
       },
     ],
   },
+  basePath: '/zayyid123.github.io',
 };
