@@ -1,13 +1,13 @@
 'use client'
 import React, { useState } from 'react'
-import { Mochiy_Pop_P_One } from 'next/font/google'
+// import { Mochiy_Pop_P_One } from 'next/font/google'
 import { useRouter } from 'next/navigation'
 
 // font logo
-const logo = Mochiy_Pop_P_One({
-  weight: '400',
-  subsets: ['latin'],
-})
+// const logo = Mochiy_Pop_P_One({
+//   weight: '400',
+//   subsets: ['latin'],
+// })
 
 // icon
 import { Bars3Icon } from '@heroicons/react/24/solid'
@@ -33,7 +33,7 @@ const Navbar = () => {
               router.push('/#home')
             }}
           >
-            <div className={logo.className}>ZAY<span className='text-white'>YID</span></div>
+            <div>ZAY<span className='text-white'>YID</span></div>
           </div>
 
           {/* menu desktop */}
