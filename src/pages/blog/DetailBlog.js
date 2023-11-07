@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import BreadCrumbUser from "../../components/BreadCrumbUser";
+import { Helmet } from "react-helmet";
 
 // css blog
-import './blog.css'
+import "./blog.css";
 
 // third party
 import parse from "html-react-parser";
@@ -18,7 +19,7 @@ import IconFacebook from "../../assets/icon/sosmed/facebook.svg";
 import IconInstagram from "../../assets/icon/sosmed/instagram.svg";
 import IconLinkedin from "../../assets/icon/sosmed/linkedin.svg";
 import IconGithub from "../../assets/icon/sosmed/github.svg";
-import IconPick from '../../assets/image/pick.png'
+import IconPick from "../../assets/image/pick.png";
 
 // config
 import fbConfig from "../../config/firebase";
@@ -26,7 +27,7 @@ import RelatedBlog from "../../components/RelatedBlog";
 const db = getFirestore(fbConfig);
 
 const DetailBlog = () => {
-  const { id } = useParams();
+  const { judul, id } = useParams();
   const [detailBlog, setdetailBlog] = useState();
 
   useEffect(() => {
@@ -42,6 +43,28 @@ const DetailBlog = () => {
 
   return (
     <div>
+      {detailBlog && (
+        <Helmet>
+          <title>{judul.split("-").join(" ")}</title>
+          <meta
+            property="og:image"
+            content={detailBlog.image
+              .split("upload/")
+              .join("upload/w_300,f_auto/")}
+          />
+          <meta
+            property="og:image:secure_url"
+            content={detailBlog.image
+              .split("upload/")
+              .join("upload/w_300,f_auto/")}
+          />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content="400" />
+          <meta property="og:image:height" content="300" />
+          <meta property="og:image:alt" content={judul.split("-").join(" ")} />
+        </Helmet>
+      )}
+
       <div id="blog_detail" className="bg-bg-200 w-full">
         <div className="max-w-6xl m-auto py-28 px-5">
           {/* breadcrumb */}
@@ -118,7 +141,8 @@ const DetailBlog = () => {
                   <a
                     href="https://www.facebook.com/mochamad.zayyid"
                     target="_blank"
-                    className="bg-def-orange-300 mx-1 rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300" rel="noreferrer"
+                    className="bg-def-orange-300 mx-1 rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300"
+                    rel="noreferrer"
                   >
                     <img src={IconFacebook} alt="fb" className="w-[33px]" />
                   </a>
@@ -127,7 +151,8 @@ const DetailBlog = () => {
                   <a
                     href="https://www.instagram.com/zayyid_123/"
                     target="_blank"
-                    className="bg-def-orange-300 mx-1 rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300" rel="noreferrer"
+                    className="bg-def-orange-300 mx-1 rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300"
+                    rel="noreferrer"
                   >
                     <img src={IconInstagram} alt="ig" className="w-[33px]" />
                   </a>
@@ -136,7 +161,8 @@ const DetailBlog = () => {
                   <a
                     href="https://www.linkedin.com/in/mochamad-zayyid/"
                     target="_blank"
-                    className="bg-def-orange-300 mx-1 rounded-full p-[2px] cursor-pointer hover:bg-[#32334c] ease-in-out duration-300" rel="noreferrer"
+                    className="bg-def-orange-300 mx-1 rounded-full p-[2px] cursor-pointer hover:bg-[#32334c] ease-in-out duration-300"
+                    rel="noreferrer"
                   >
                     <img
                       src={IconLinkedin}
@@ -149,7 +175,8 @@ const DetailBlog = () => {
                   <a
                     href="https://github.com/zayyid123"
                     target="_blank"
-                    className="mx-[2.5px] bg-def-orange-300 p-[5.5px] rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300" rel="noreferrer"
+                    className="mx-[2.5px] bg-def-orange-300 p-[5.5px] rounded-full cursor-pointer hover:bg-[#32334c] ease-in-out duration-300"
+                    rel="noreferrer"
                   >
                     <img src={IconGithub} alt="github" className="w-[25px]" />
                   </a>
