@@ -7,11 +7,10 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+import removePunctuation from "../utils/removePunctuation";
 
 // config
 import fbConfig from "../config/firebase";
-import removePunctuation from "../utils/removePunctuation";
-import { Link } from "react-router-dom";
 const db = getFirestore(fbConfig);
 
 const RelatedBlog = () => {
@@ -50,11 +49,11 @@ const RelatedBlog = () => {
         {dataBlog &&
           dataBlog.map((res, index) => {
             return (
-              <Link
+              <a
                 key={"itemblog" + index}
-                to={`/blog/${removePunctuation(res.title)
+                href={`/blog/${removePunctuation(res.title)
                   .split(" ")
-                  .join("-")}/${res.id}/#blog_detail`}
+                  .join("-")}/${res.id}`}
                 className="group mb-6 w-full cursor-pointer"
               >
                 <div className="w-full rounded-md mb-6 overflow-hidden">
@@ -77,7 +76,7 @@ const RelatedBlog = () => {
 
                 {/* date */}
                 <div>{res.date}</div>
-              </Link>
+              </a>
             );
           })}
       </div>
