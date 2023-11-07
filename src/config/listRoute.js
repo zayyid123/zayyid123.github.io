@@ -26,7 +26,7 @@ const list = [
     component: Portfolio,
   },
   {
-    path: "/portfolio/:id",
+    path: "/portfolio/detail/:id",
     name: "Detail Portfolio",
     component: DetailPortfolio,
   },

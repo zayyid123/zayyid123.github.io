@@ -1,11 +1,14 @@
 import React from "react";
 import ListRoute from "./config/listRoute.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.js";
+import Footer from "./components/Footer.js";
 
 function App() {
   return (
-    <>
+    <main>
       <Router>
+      <Navbar/>
         <Routes>
           {
             ListRoute.map((data) => (
@@ -18,8 +21,9 @@ function App() {
             ))
           }
         </Routes>
+      <Footer/>
       </Router>
-    </>
+    </main>
   );
 }
 
