@@ -1,10 +1,25 @@
 import React from "react";
+import ListRoute from "./config/listRoute.js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen bg-red-200">
-      <div>helo</div>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          {
+            ListRoute.map((data) => (
+              <Route 
+                key={data.name}
+                exact 
+                path={data.path} 
+                element={<data.component />} 
+              />
+            ))
+          }
+        </Routes>
+      </Router>
+    </>
   );
 }
 
