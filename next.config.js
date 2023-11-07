@@ -24,6 +24,5 @@ module.exports = {
         hostname: "res.cloudinary.com",
       },
     ],
-  },
-  basePath: '/github-pages'
+  }
 };
