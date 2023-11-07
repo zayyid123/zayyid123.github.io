@@ -36,6 +36,7 @@ import ButtonExploreMore from "../../components/ButtonExploreMore";
 import WorkLatest from "../../components/WorkLatest";
 import FormContact from "../../components/FormContact";
 import LatestBlog from "../../components/LatestBlog";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -315,9 +316,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="font-bold text-sm text-bg-100 bg-white py-3 px-8 border border-white rounded-md drop-shadow-lg cursor-pointer hover:bg-bg-100 hover:text-def-orange-300 hover:border-bg-100 ease-in-out duration-300">
+            <Link to={'/blog'} className="font-bold text-sm text-bg-100 bg-white py-3 px-8 border border-white rounded-md drop-shadow-lg cursor-pointer hover:bg-bg-100 hover:text-def-orange-300 hover:border-bg-100 ease-in-out duration-300">
               DISCOVER ALL
-            </div>
+            </Link>
           </div>
 
           {/* blog */}
