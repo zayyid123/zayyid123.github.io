@@ -65,7 +65,7 @@ const DetailPortfolio = ({ params }) => {
               <div className="font-bold text-3xl">{detailPortfolio?.name}</div>
 
               {/* category */}
-              <div className="mt-4 font-semibold px-4 py-2 bg-def-orange-300 w-fit rounded-full text-white">
+              <div className="mt-4 font-semibold px-4 py-2 bg-def-orange-300 w-fit rounded-full text-white capitalize">
                 {detailPortfolio?.project}
               </div>
 

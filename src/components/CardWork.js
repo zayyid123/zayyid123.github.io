@@ -18,7 +18,7 @@ const CardWork = ({ data, index, isHeight = true }) => {
         />
         <div className="absolute bottom-5 left-5 z-10">
           <div className="bg-white group-hover:bg-def-orange-300 group-hover:text-white ease-in-out duration-300 drop-shadow-lg text-center rounded-full text-bg-100 py-1 px-4 mb-1 w-fit">
-            <div>{data.project}</div>
+            <div className="capitalize">{data.project}</div>
           </div>
           <div className="text-white group-hover:text-def-orange-300 ease-in-out duration-300 drop-shadow-md font-bold text-xl px-1">
             {data.name}

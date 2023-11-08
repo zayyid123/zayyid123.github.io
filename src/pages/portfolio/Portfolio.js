@@ -7,6 +7,7 @@ import {
   limitToLast,
   orderBy,
   query,
+  where,
 } from "firebase/firestore";
 
 // config
@@ -25,11 +26,12 @@ const Portfolio = () => {
     const portfolioRef = collection(db, "portfolio");
 
     // ambil data
-    const queryData = query(
-      portfolioRef,
-      orderBy("createdAt"),
-      limitToLast(showData)
-    );
+    let queryData = ''
+    if (filter === 'all') {
+      queryData = query(portfolioRef, orderBy("createdAt"), limitToLast(showData));
+    } else {
+      queryData = query(portfolioRef, orderBy("createdAt"), limitToLast(showData), where("project", "==", filter));
+    }
     const querySnapshot = await getDocs(queryData);
 
     let data = [];
@@ -47,7 +49,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     getDataPortfolio();
-  }, [showData]);
+  }, [showData, filter]);
 
   return (
     <div className="pt-[80px]">
