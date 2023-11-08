@@ -7,6 +7,7 @@ import {
   limitToLast,
   orderBy,
   query,
+  where,
 } from "firebase/firestore";
 
 // config
@@ -24,7 +25,12 @@ const Blog = () => {
     const blogRef = collection(db, "blog");
 
     // ambil data
-    const queryData = query(blogRef, orderBy("date"), limitToLast(showData));
+    let queryData = ''
+    if (filter === 'all') {
+      queryData = query(blogRef, orderBy("date"), limitToLast(showData));
+    } else {
+      queryData = query(blogRef, orderBy("date"), limitToLast(showData), where("category", "==", filter));
+    }
     const querySnapshot = await getDocs(queryData);
 
     let data = [];
@@ -42,7 +48,7 @@ const Blog = () => {
 
   useEffect(() => {
     getDataBlog();
-  }, [showData]);
+  }, [showData, filter]);
 
   return (
     <div className="pt-[80px]">
@@ -124,7 +130,7 @@ const Blog = () => {
                           </div>
 
                           {/* category */}
-                          <div className="mb-6 font-semibold">
+                          <div className="mb-6 font-semibold uppercase">
                             {res.category}
                           </div>
 

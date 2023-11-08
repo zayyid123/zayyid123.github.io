@@ -67,7 +67,7 @@ const RelatedBlog = () => {
                 </div>
 
                 {/* category */}
-                <div className="mb-6 font-semibold">{res.category}</div>
+                <div className="mb-6 font-semibold uppercase">{res.category}</div>
 
                 {/* title */}
                 <div className="mb-6 font-bold text-4xl md:text-lg md:max-h-14 md:overflow-hidden text-ellipsis">

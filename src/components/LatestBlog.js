@@ -64,7 +64,7 @@ const LatestBlog = () => {
               </div>
 
               {/* category */}
-              <div className="mb-6 font-semibold">
+              <div className="mb-6 font-semibold uppercase">
                 {dataBlogLatest[0].category}
               </div>
 
@@ -104,7 +104,7 @@ const LatestBlog = () => {
                     </div>
 
                     {/* category */}
-                    <div className="mb-6 font-semibold">{res.category}</div>
+                    <div className="mb-6 font-semibold uppercase">{res.category}</div>
 
                     {/* title */}
                     <div className="mb-6 font-bold text-4xl md:text-lg lg:max-w-sm">
