@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const BreadCrumbUser = ({ dataLink }) => {
   return (
-    <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
-        <li className="inline-flex items-center">
+    <div className="flex" aria-label="Breadcrumb">
+      <div className="inline-flex items-center space-x-1 md:space-x-3">
+        <div className="inline-flex items-center">
           <Link to={"/"}>
             <div className="cursor-pointer inline-flex items-center text-sm font-medium text-[#391400] hover:text-def-orange-300">
               <svg
@@ -21,8 +21,8 @@ const BreadCrumbUser = ({ dataLink }) => {
               Home
             </div>
           </Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <div className="flex items-center">
             <svg
               className="w-3 h-3 text-[#391400] mx-1"
@@ -45,8 +45,8 @@ const BreadCrumbUser = ({ dataLink }) => {
               </div>
             </Link>
           </div>
-        </li>
-        <li aria-current="page">
+        </div>
+        <div aria-current="page">
           <div className="flex items-center">
             <svg
               className="w-3 h-3 text-[#391400] mx-1"
@@ -67,9 +67,9 @@ const BreadCrumbUser = ({ dataLink }) => {
               {dataLink[1].name}
             </span>
           </div>
-        </li>
-      </ol>
-    </nav>
+        </div>
+      </div>
+    </div>
   );
 };
 

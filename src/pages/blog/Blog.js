@@ -113,7 +113,7 @@ const Blog = () => {
                           .join("-")}/${res.id}/#blog_detail`}
                       >
                         <div className="group mb-6 w-full max-w-[350px] cursor-pointer">
-                          <div className="w-full rounded-md mb-6 overflow-hidden">
+                          <div className="w-full rounded-md mb-6 overflow-hidden md:max-h-[230px]">
                             <img
                               src={res.image}
                               alt={res.title}

@@ -56,7 +56,7 @@ const RelatedBlog = () => {
                   .join("-")}/${res.id}`}
                 className="group mb-6 w-full cursor-pointer"
               >
-                <div className="w-full rounded-md mb-6 overflow-hidden">
+                <div className="w-full rounded-md mb-6 overflow-hidden md:max-h-[160px]">
                   <img
                     src={res.image}
                     alt={res.title}
