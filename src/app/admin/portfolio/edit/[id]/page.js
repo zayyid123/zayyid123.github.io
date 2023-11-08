@@ -106,6 +106,8 @@ const EditPorfolio = ({ params }) => {
     getDetailDataPortfolio();
   }, []);
 
+  console.log(formData)
+
   return (
     <div>
       {/* breadcrumbs */}
@@ -230,15 +232,14 @@ const EditPorfolio = ({ params }) => {
                 <select
                   id="project"
                   className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                  value={formData.project}
                   onChange={(e) => {
-                    handleChangeFormData("project", e.target.value);
+                    handleChangeFormData("project", e.target.value.toLowerCase());
                   }}
                   required
                 >
                   <option value={""}>Choice Category</option>
-                  <option value={"Mobile"}>Mobile</option>
-                  <option value={"Website"}>Website</option>
+                  <option selected={formData.project === 'mobile'} value={"Mobile"}>Mobile</option>
+                  <option selected={formData.project === 'website'} value={"Website"}>Website</option>
                 </select>
               </div>
             </div>

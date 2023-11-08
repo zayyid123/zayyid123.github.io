@@ -57,7 +57,8 @@ const AddPortfolio = () => {
       // upload to dtaabase
       await setDoc(portfolioRef, 
         {
-          ...formData
+          ...formData,
+          project: formData.project.toLowerCase()
         })
         .then(() => {
           setisLoading(false)

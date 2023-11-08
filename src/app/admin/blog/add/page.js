@@ -106,6 +106,7 @@ const AddBlogPage = () => {
           await setDoc(blogRef, 
             {
               ...formData, 
+              category: formData.category.toLowerCase(),
               image: responseUploadImage.data.secure_url,
               image_public_id: responseUploadImage.data.public_id
             })

@@ -138,6 +138,7 @@ const PageEdit = ({ params }) => {
           // update data to upload
           dataToUpload = {
             ...formData,
+            category: formData.category.toLowerCase(),
             date: getToday(),
             image: responseUploadImage.data.secure_url,
             image_public_id: responseUploadImage.data.public_id,
@@ -325,17 +326,16 @@ const PageEdit = ({ params }) => {
                 </label>
                 {category && (
                   <select
-                    value={formData.category}
                     id="category"
                     className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     onChange={(e) => {
-                      handleChangeFormData("category", e.target.value);
+                      handleChangeFormData("category", e.target.value.toLowerCase());
                     }}
                     required
                   >
                     <option value={""}>Pilih Category</option>
                     {category.map((res, index) => (
-                      <option key={"optionCategory" + index} value={res.name}>
+                      <option key={"optionCategory" + index} selected={formData.category.toLowerCase() === res.name.toLowerCase()} value={res.name}>
                         {res.name}
                       </option>
                     ))}
