@@ -112,7 +112,6 @@ const Projects = () => {
       id="panelProjects"
       ref={sectionRef}
       className="absolute inset-0 h-dvh flex flex-col justify-center px-6 md:px-20 text-white overflow-hidden bg-[#2C3539] z-20 pt-16"
-      style={{ transform: 'translateY(100%)' }}
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16">
         <h2

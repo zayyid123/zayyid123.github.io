@@ -121,14 +121,26 @@ const Skill = () => {
 
     const ctx = gsap.context(() => {
       const updatePath = () => {
+        const section = sectionRef.current;
         const box = diamondRef.current;
-        if (!box || skillRefs.current.length === 0) return;
+        if (!section || !box || skillRefs.current.length === 0) return;
+
+        // Save current transform to restore later
+        const origTransform = section.style.transform;
+        // Temporarily reset transform to flat so getBoundingClientRect gets accurate, unrotated positions
+        section.style.transform = 'none';
+        // Force reflow
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        section.offsetHeight;
 
         gsap.killTweensOf(box);
         if (imageRef.current) gsap.killTweensOf(imageRef.current);
 
         const targetBox = skillRefs.current[0];
-        if (!targetBox) return;
+        if (!targetBox) {
+          section.style.transform = origTransform;
+          return;
+        }
 
         const boxWidth = targetBox.offsetWidth;
         const boxHeight = targetBox.offsetHeight;
@@ -162,6 +174,9 @@ const Skill = () => {
             y: r.top + r.height / 2 - (boxStartRect.top + boxStartRect.height / 2),
           };
         });
+
+        // Restore original transform for GSAP animation
+        section.style.transform = origTransform;
 
         // Set initial position immediately to the first box (HTML)
         gsap.set(box, { x: points[0].x, y: points[0].y });
@@ -316,7 +331,6 @@ const Skill = () => {
       ref={sectionRef}
       className="absolute inset-0 h-dvh w-full flex flex-col justify-center px-6 md:px-20 bg-[#111111] z-25 overflow-hidden"
       style={{
-        transform: 'translateY(100%)',
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
         backgroundSize: '50px 50px',
       }}
