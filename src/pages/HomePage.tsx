@@ -17,92 +17,94 @@ function HomePage() {
     const TOTAL_UNITS = 60; // Hero(0) -> Projects(10) -> Skill(20) -> SkillAnim(30) -> Ready(40) -> ReadyAnim(50) -> Footer(60)
     const TOTAL_SCROLL = 6000; // Define how many pixels to scroll for the full experience
 
-    const panelProjects = document.getElementById('panelProjects');
-    const panelSkill = document.getElementById('panelSkill');
-    const panelReady = document.getElementById('panelReady');
-    const panelFooter = document.getElementById('panelFooter');
-    const progressBar = document.getElementById('progressBar');
+    const ctx = gsap.context(() => {
+      const panelProjects = document.getElementById('panelProjects');
+      const panelSkill = document.getElementById('panelSkill');
+      const panelReady = document.getElementById('panelReady');
+      const panelFooter = document.getElementById('panelFooter');
+      const progressBar = document.getElementById('progressBar');
 
-    if (!panelProjects || !panelSkill || !panelReady || !panelFooter) return;
+      if (!panelProjects || !panelSkill || !panelReady || !panelFooter) return;
 
-    // Reset initial states
-    gsap.set([panelProjects, panelSkill, panelReady, panelFooter], {
-      yPercent: 150,
-      rotate: 20,
-    });
+      // Reset initial states
+      gsap.set([panelProjects, panelSkill, panelReady, panelFooter], {
+        yPercent: 150,
+        rotate: 20,
+      });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: `+=${TOTAL_SCROLL}`, // Total scroll distance
-        pin: true,
-        scrub: 1, // Smooth scrub
-        onUpdate: (self) => {
-          const p = self.progress * TOTAL_UNITS;
-          if (progressBar) {
-            progressBar.style.width = `${self.progress * 100}%`;
-          }
-          // Dispatch custom event for decoupled animations (like Skill diamond)
-          window.dispatchEvent(
-            new CustomEvent('app-scroll', { detail: { progress: p, TOTAL_UNITS } })
-          );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: `+=${TOTAL_SCROLL}`, // Total scroll distance
+          pin: true,
+          scrub: 1, // Smooth scrub
+          onUpdate: (self) => {
+            const p = self.progress * TOTAL_UNITS;
+            if (progressBar) {
+              progressBar.style.width = `${self.progress * 100}%`;
+            }
+            // Dispatch custom event for decoupled animations (like Skill diamond)
+            window.dispatchEvent(
+              new CustomEvent('app-scroll', { detail: { progress: p, TOTAL_UNITS } })
+            );
+          },
         },
-      },
-    });
+      });
 
-    // Map 60 units to the timeline duration.
-    // Progress 0 to 10: Projects slide up
-    tl.to(panelProjects, {
-      yPercent: 0,
-      ease: 'none',
-      duration: 10,
-      rotate: 0,
-    });
-
-    // Progress 10 to 20: Skill slide up
-    tl.to(panelSkill, {
-      yPercent: 0,
-      ease: 'none',
-      duration: 10,
-      rotate: 0,
-    });
-
-    // Progress 20 to 30: Wait (Skill inner animation happens via app-scroll event)
-    tl.to(
-      {},
-      {
+      // Map 60 units to the timeline duration.
+      // Progress 0 to 10: Projects slide up
+      tl.to(panelProjects, {
+        yPercent: 0,
+        ease: 'none',
         duration: 10,
         rotate: 0,
+      });
+
+      // Progress 10 to 20: Skill slide up
+      tl.to(panelSkill, {
         yPercent: 0,
-      }
-    );
-
-    // Progress 30 to 40: Ready slide up
-    tl.to(panelReady, {
-      yPercent: 0,
-      ease: 'none',
-      duration: 10,
-      rotate: 0,
-    });
-
-    // Progress 40 to 50: Wait (Ready inner horizontal scroll animation happens via app-scroll event)
-    tl.to(
-      {},
-      {
+        ease: 'none',
         duration: 10,
         rotate: 0,
-        yPercent: 0,
-      }
-    );
+      });
 
-    // Progress 50 to 60: Footer slide up
-    tl.to(panelFooter, {
-      yPercent: 0,
-      ease: 'none',
-      duration: 10,
-      rotate: 0,
-    });
+      // Progress 20 to 30: Wait (Skill inner animation happens via app-scroll event)
+      tl.to(
+        {},
+        {
+          duration: 10,
+          rotate: 0,
+          yPercent: 0,
+        }
+      );
+
+      // Progress 30 to 40: Ready slide up
+      tl.to(panelReady, {
+        yPercent: 0,
+        ease: 'none',
+        duration: 10,
+        rotate: 0,
+      });
+
+      // Progress 40 to 50: Wait (Ready inner horizontal scroll animation happens via app-scroll event)
+      tl.to(
+        {},
+        {
+          duration: 10,
+          rotate: 0,
+          yPercent: 0,
+        }
+      );
+
+      // Progress 50 to 60: Footer slide up
+      tl.to(panelFooter, {
+        yPercent: 0,
+        ease: 'none',
+        duration: 10,
+        rotate: 0,
+      });
+    }, containerRef);
 
     // Handle navigation clicks
     const handleNavTo = (e: Event) => {
@@ -128,26 +130,28 @@ function HomePage() {
 
     return () => {
       window.removeEventListener('nav-to', handleNavTo);
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ctx.revert(); // This cleanly removes pin spacers and restores DOM to pre-pinned state
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="text-tertiary selection:bg-primary selection:text-white w-full h-dvh overflow-hidden relative"
-    >
+    <div className="w-full min-h-screen">
       <div
-        id="progressBar"
-        className="fixed top-0 left-0 h-1 bg-white z-999 w-0 transition-all duration-75"
-      ></div>
+        ref={containerRef}
+        className="text-tertiary selection:bg-primary selection:text-white w-full h-dvh overflow-hidden relative"
+      >
+        <div
+          id="progressBar"
+          className="fixed top-0 left-0 h-1 bg-white z-999 w-0 transition-all duration-75"
+        ></div>
 
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Skill />
-      <Ready />
-      <Footer />
+        <Navbar />
+        <Hero />
+        <Projects />
+        <Skill />
+        <Ready />
+        <Footer />
+      </div>
     </div>
   );
 }
