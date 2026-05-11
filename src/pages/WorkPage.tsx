@@ -114,7 +114,7 @@ const WorkPage = () => {
     fetchFirestoreProjects();
   }, []);
 
-  // Helper parsers
+  // parsers
   const getYearFromDate = (dateStr: any) => {
     if (!dateStr) return '2024';
     if (typeof dateStr === 'string') {
