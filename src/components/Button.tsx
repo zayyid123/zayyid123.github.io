@@ -70,7 +70,7 @@ const Button: React.FC<ButtonProps> = ({
   }, []);
 
   const baseStyles =
-    'px-6 py-3 font-label font-medium transition-colors duration-300 ease-in-out flex items-center justify-center gap-2';
+    'px-6 py-3 font-label font-medium transition-colors duration-300 ease-in-out flex items-center justify-center gap-2 cursor-pointer';
 
   const variants = {
     primary: 'bg-primary text-white hover:bg-secondary',

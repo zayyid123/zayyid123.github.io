@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import Button from './Button';
+import { toast } from 'sonner';
 
 const Hero = () => {
   const containerRef = useRef<HTMLElement | null>(null);
@@ -70,6 +71,24 @@ const Hero = () => {
     };
   }, []);
 
+  async function downloadCV() {
+    try {
+      const response = await fetch('/Mochamad_Muzayyid_Al_Hakim_CV.pdf');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Mochamad_Muzayyid_Al_Hakim_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      toast.success('CV downloaded successfully');
+    } catch {
+      toast.error('Failed to download CV');
+    }
+  }
+
   return (
     <section
       id="panelHero"
@@ -114,6 +133,7 @@ const Hero = () => {
             <Button
               variant="inverted"
               className="rounded-full bg-white! text-black! hover:bg-gray-200!"
+              onClick={downloadCV}
             >
               Download CV <ArrowRight size={20} />
             </Button>
