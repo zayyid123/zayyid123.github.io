@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,6 +40,8 @@ const Projects = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Initial entrance states
@@ -164,7 +167,11 @@ const Projects = () => {
         >
           SELECTED <br className="hidden md:block" /> <span className="text-primary">WORKS</span>
         </h2>
-        <Button variant="outlined" className="hidden md:flex mt-8 md:mt-0 w-fit">
+        <Button
+          onClick={() => navigate('/work')}
+          variant="outlined"
+          className="flex mt-8 md:mt-0 w-fit"
+        >
           View All Projects
         </Button>
       </div>
