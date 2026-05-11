@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="flex gap-4">
           <Button
             variant="inverted"
-            onClick={() => (window.location.href = 'mailto:[mochamadzayyid@gmail.com]')}
+            onClick={() => (window.location.href = 'mailto:mochamadzayyid@gmail.com')}
           >
             Get in touch
           </Button>
