@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from './Button';
+import { toast } from 'sonner';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,12 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
+  function onCopyEmail() {
+    navigator.clipboard.writeText('mochamadzayyid@gmail.com').then(() => {
+      toast.success('Email copied to clipboard');
+    });
+  }
+
   return (
     <footer
       id="panelFooter"
@@ -60,22 +67,41 @@ const Footer = () => {
           </h1>
         </div>
         <div className="flex gap-4">
-          <Button variant="inverted">Get in touch</Button>
-          <Button variant="secondary">Copy Email</Button>
+          <Button
+            variant="inverted"
+            onClick={() => (window.location.href = 'mailto:[mochamadzayyid@gmail.com]')}
+          >
+            Get in touch
+          </Button>
+          <Button variant="secondary" onClick={() => onCopyEmail()}>
+            Copy Email
+          </Button>
         </div>
       </div>
 
       <div className="mt-20 pt-8 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-center z-10 font-body text-sm font-medium">
         <p>&copy; {new Date().getFullYear()} Zay Portfolio. All rights reserved.</p>
         <div className="flex gap-8 mt-4 md:mt-0 font-label uppercase tracking-widest">
-          <a href="#" className="hover:text-white transition-colors">
-            Twitter
-          </a>
-          <a href="#" className="hover:text-white transition-colors">
+          <a
+            href="https://www.linkedin.com/in/mochamad-zayyid"
+            target="_blank"
+            className="transition-colors hover:text-primary"
+          >
             LinkedIn
           </a>
-          <a href="#" className="hover:text-white transition-colors">
+          <a
+            href="https://www.instagram.com/zayyid_123/"
+            target="_blank"
+            className="transition-colors hover:text-primary"
+          >
             Instagram
+          </a>
+          <a
+            href="https://github.com/zayyid123"
+            target="_blank"
+            className="transition-colors hover:text-primary"
+          >
+            Github
           </a>
         </div>
       </div>
