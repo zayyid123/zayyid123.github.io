@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Skill from './components/Skill';
 import Footer from './components/Footer';
+import Ready from './components/ready';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,18 +14,19 @@ function App() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const TOTAL_UNITS = 40; // Hero(0) -> Projects(10) -> Skill(20) -> SkillAnim(30) -> Footer(40)
-    const TOTAL_SCROLL = 4000; // Define how many pixels to scroll for the full experience
+    const TOTAL_UNITS = 60; // Hero(0) -> Projects(10) -> Skill(20) -> SkillAnim(30) -> Ready(40) -> ReadyAnim(50) -> Footer(60)
+    const TOTAL_SCROLL = 6000; // Define how many pixels to scroll for the full experience
 
     const panelProjects = document.getElementById('panelProjects');
     const panelSkill = document.getElementById('panelSkill');
+    const panelReady = document.getElementById('panelReady');
     const panelFooter = document.getElementById('panelFooter');
     const progressBar = document.getElementById('progressBar');
 
-    if (!panelProjects || !panelSkill || !panelFooter) return;
+    if (!panelProjects || !panelSkill || !panelReady || !panelFooter) return;
 
     // Reset initial states
-    gsap.set([panelProjects, panelSkill, panelFooter], {
+    gsap.set([panelProjects, panelSkill, panelReady, panelFooter], {
       yPercent: 150,
       rotate: 20,
     });
@@ -49,7 +51,7 @@ function App() {
       },
     });
 
-    // Map 40 units to the timeline duration.
+    // Map 60 units to the timeline duration.
     // Progress 0 to 10: Projects slide up
     tl.to(panelProjects, {
       yPercent: 0,
@@ -76,7 +78,25 @@ function App() {
       }
     );
 
-    // Progress 30 to 40: Footer slide up
+    // Progress 30 to 40: Ready slide up
+    tl.to(panelReady, {
+      yPercent: 0,
+      ease: 'none',
+      duration: 10,
+      rotate: 0,
+    });
+
+    // Progress 40 to 50: Wait (Ready inner horizontal scroll animation happens via app-scroll event)
+    tl.to(
+      {},
+      {
+        duration: 10,
+        rotate: 0,
+        yPercent: 0,
+      }
+    );
+
+    // Progress 50 to 60: Footer slide up
     tl.to(panelFooter, {
       yPercent: 0,
       ease: 'none',
@@ -93,7 +113,7 @@ function App() {
       if (target === 'hero') targetProgress = 0;
       else if (target === 'work') targetProgress = 10;
       else if (target === 'skills') targetProgress = 20;
-      else if (target === 'contact') targetProgress = 40;
+      else if (target === 'contact') targetProgress = 60;
 
       // Scroll to the mapped progress position
       const scrollPos = (targetProgress / TOTAL_UNITS) * TOTAL_SCROLL;
@@ -119,13 +139,14 @@ function App() {
     >
       <div
         id="progressBar"
-        className="fixed top-0 left-0 h-1 bg-white z-[999] w-0 transition-all duration-75"
+        className="fixed top-0 left-0 h-1 bg-white z-999 w-0 transition-all duration-75"
       ></div>
 
       <Navbar />
       <Hero />
       <Projects />
       <Skill />
+      <Ready />
       <Footer />
     </div>
   );

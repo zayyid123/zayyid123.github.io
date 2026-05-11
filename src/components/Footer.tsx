@@ -46,7 +46,7 @@ const Footer = () => {
     <footer
       id="panelFooter"
       ref={containerRef}
-      className="absolute inset-0 h-dvh flex flex-col justify-center px-6 md:px-20 text-white overflow-hidden bg-secondary z-30"
+      className="absolute inset-0 h-dvh flex flex-col justify-center px-6 md:px-20 text-white overflow-hidden bg-secondary z-35"
     >
       <div className="absolute top-[-50%] right-[-10%] w-[80vw] h-[80vw] bg-white rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none"></div>
 
