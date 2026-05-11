@@ -71,7 +71,7 @@ const WorkPage = () => {
   const [loading, setLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // 1. Fetch data from Firestore
+  // 1. Fetch from Firestore
   useEffect(() => {
     const fetchFirestoreProjects = async () => {
       try {
